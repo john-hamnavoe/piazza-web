@@ -81,6 +81,5 @@ test:
 #
 production:
   <<: *default
-  database: piazza_production
-  username: piazza
+  url: <%= ENV['DATABASE_URL'] %>
   password: <%= ENV["PIAZZA_DATABASE_PASSWORD"] %>
