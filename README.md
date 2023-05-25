@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running on local network 
 
-Things you may want to cover:
+In Procfile.dev changs so rails server runs on 0.0.0.0
+```bin/rails server -b 0.0.0.0 -p 3000```
 
-* Ruby version
+To find the IP address of your development machine click on the wifi icon in the menu bar with the option key pressed down.
 
-* System dependencies
+Then take this IP Address and go to your phone or other device on network and go to here:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```http://<IP Address>:3000```
