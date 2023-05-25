@@ -64,5 +64,20 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_select "p.is-danger",
       text:
         I18n.t("activerecord.errors.models.user.attributes.password_confirmation.confirmation")
-  end  
+  end
+
+  test "can update user details" do
+    @user = users(:jerry)
+    log_in @user
+
+    patch profile_path, params: {
+      user: {
+        name: "Jerry Seinfeld"
+      }
+    }
+
+    assert_redirected_to profile_path
+    follow_redirect!
+    assert_equal "Jerry Seinfeld", @user.reload.name
+  end
 end
